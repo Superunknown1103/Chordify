@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chordsheetjs": "^1.5.3",
+    "enzyme": "^3.1.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
@@ -13,5 +14,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-test-renderer": "^16.0.0"
   }
 }
