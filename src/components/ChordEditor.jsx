@@ -17,12 +17,19 @@ class ChordEditor extends Component {
         parser = new ChordSheetJS.ChordProParser(),
         song = parser.parse(this.state.value);
         // this return will give us raw html
-        return { __html: formatter.format(song )};
+        return { __html: formatter.format(song)};
     }
 
     render() {
         return (
-            <div>
+            // template
+            <div className="chord-editor">
+                <div className="panel">
+                    <h3>Input</h3>
+                    </div>
+                <div className="panel">
+                </div>
+
                 </div>
         );
     }
