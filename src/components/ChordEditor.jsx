@@ -22,14 +22,23 @@ class ChordEditor extends Component {
 
     render() {
         return (
-            // template
+            // dangerouslySetInnerHTML to allow raw HTML
+            // template for entering song lyrics
             <div className="chord-editor">
                 <div className="panel">
                     <h3>Input</h3>
+                    <textarea
+                    style={{width: "100%", height: "100%"}}
+                    onChange={this.handleChange}
+                    defaultValue={this.state.value} />
                     </div>
                 <div className="panel">
+                    <h3>Output</h3>
+                    <div
+                    style={{width: "100%", height: "100%", fontFamily: "monospace"}}
+                    className="chord-output"
+                    dangerouslySetInnerHTML={this.getChordMarkup()}/>
                 </div>
-
                 </div>
         );
     }
