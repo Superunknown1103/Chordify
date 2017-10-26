@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import ChordEdtior from './components/ChordEditor.jsx';
+import ChordEditor from './components/ChordEditor.jsx';
 
 class App extends Component {
   render() {
