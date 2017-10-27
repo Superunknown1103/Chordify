@@ -9,7 +9,7 @@ class App extends Component {
      <div className="wrapper">
        <Header />
        <div className="workspace">
-         <ChordEditor />
+         <ChordEditor song={{chordpro: "Type your lyrics here"}} />
          </div>
            <Footer />
        </div>
