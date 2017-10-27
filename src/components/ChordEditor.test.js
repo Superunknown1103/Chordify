@@ -42,5 +42,24 @@ it('renders the chord chart output', () => {
   const realOutput = editor.find('div.chord-output').html();
   expect(realOutput.indexOf(expectedOutput) > -1).toEqual(true);
   });
+
+  it('calls updateSong when the textarea changes', () => {
+    var theSong;
+    const update = (song) => {
+      theSong = song;
+    };
+    const editor = shallow(<ChordEditor song={{chordpro: "[B]New [Am]Lyric" }} updateSong={update} />);
+    editor.find('textarea').simulate("change", { target: { value: "[B]New [Am]Lyric "}});
+    expect(theSong).toEqual({ chordpro: "[B]New [Am]Lyric "});
+  });
 });
+  
+  // take the editor, find the chord output, and get the html.
+  // expect the real output to be greater than -1.
+    const realOutput = editor.find('div.chord-output').html();
+    expect(realOutput.indexOf(expectedOutput) > -1).toEqual(true);
+    });
+  });
+  
+  
 
