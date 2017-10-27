@@ -12,19 +12,19 @@ configure({ adapter: new Adapter() });
 
 describe('<ChordEditor />', () => {
 it('renders an editor area', () => {
-    const editor = shallow(<ChordEditor />);
+    const editor = shallow(<ChordEditor song={{chordpro: ""}} />);
     // expect a text area in our chordeditor -> find 1
    expect(editor.find('textarea').length).toEqual(1);
   });
 
 it('renders an editor area', () => {
-  const editor = shallow(<ChordEditor />);
+  const editor = shallow(<ChordEditor song={{chordpro: ""}}/>);
   // expect a text area in our chordeditor -> find 1
  expect(editor.find('div.chord-output').length).toEqual(1);
 });
 
 it('renders the chord chart output', () => {
-  const editor = shallow(<ChordEditor />);
+  const editor = shallow(<ChordEditor song={{chordpro: "[B]New [Am]Lyric" }} />);
   const expectedOutput = 
   '<table>' + 
   '<tr>' +
@@ -36,8 +36,6 @@ it('renders the chord chart output', () => {
   '<td class="lyrics">Lyric&nbsp;</td>' +
   '</tr>' +
   '</table>';
-
-  editor.setState({ value: "[B]New [Am]Lyric" });
 
 // take the editor, find the chord output, and get the html.
 // expect the real output to be greater than -1.

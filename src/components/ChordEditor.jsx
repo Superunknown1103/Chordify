@@ -19,7 +19,7 @@ class ChordEditor extends Component {
     getChordMarkup() {
         var formatter = new ChordSheetJS.HtmlFormatter(),
         parser = new ChordSheetJS.ChordProParser(),
-        song = parser.parse(this.props.chordpro);
+        song = parser.parse(this.props.song.chordpro);
         // this return will give us raw html
         return { __html: formatter.format(song)};
     }
