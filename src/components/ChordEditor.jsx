@@ -7,8 +7,11 @@ class ChordEditor extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
-        this.setState({ value: e.target.value });
+    handleChange(event) {
+        const chordpro = event.target.value;
+        this.props.updateSong({
+            chordpro: chordpro, 
+        });
     }
 
     getChordMarkup() {
