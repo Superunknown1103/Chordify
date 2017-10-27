@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "chordsheetjs": "^1.5.3",
+    "core-js": "^2.5.1",
     "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jest-cli": "^21.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"

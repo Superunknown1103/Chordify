@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ChordSheetJS from 'chordsheetjs';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 
 class ChordEditor extends Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class ChordEditor extends Component {
     getChordMarkup() {
         var formatter = new ChordSheetJS.HtmlFormatter(),
         parser = new ChordSheetJS.ChordProParser(),
-        song = parser.parse(this.props.song.chordpro);
+        song = parser.parse(this.props.chordpro);
         // this return will give us raw html
         return { __html: formatter.format(song)};
     }
