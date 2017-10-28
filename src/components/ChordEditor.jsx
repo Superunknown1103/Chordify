@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Breadcrumb } from '@blueprintjs/core';
 import ChordSheetJS from 'chordsheetjs';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
@@ -28,8 +29,12 @@ class ChordEditor extends Component {
 
     render() {
         return (
-            // dangerouslySetInnerHTML to allow raw HTML
-            // template for entering song lyrics
+            <div>
+                <ul className="pt-breadcrumbs">
+                    <li><Breadcrumb href="/songs" text="Songs" /></li>
+                    <li><Breadcrumb href="/songs" text={this.props.song.title} /></li>
+                    </ul>
+                <h2 style={{margin: "0.5em 0"}}>{this.props.song.title}</h2>
             <div className="chord-editor">
                 <div className="panel">
                     <h3>Input</h3>
@@ -44,6 +49,7 @@ class ChordEditor extends Component {
                     style={{width: "100%", height: "100%", fontFamily: "monospace"}}
                     className="chord-output"
                     dangerouslySetInnerHTML={this.getChordMarkup()}/>
+                </div>
                 </div>
                 </div>
         );

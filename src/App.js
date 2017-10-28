@@ -49,11 +49,12 @@ class App extends Component {
 
   render() {
     return (
-     <div className="wrapper">
+
+     <div style={{maxWidth: "1160px", margin: "0 auto"}}>
        <BrowserRouter>
        <div>
        <Header />
-       <div className="main-content">
+       <div className="main-content" style={{padding: "1em" }}>
        <div className="workspace">
          <Route exact path="/songs" render ={(props) => {
          return (
