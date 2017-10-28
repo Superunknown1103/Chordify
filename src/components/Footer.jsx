@@ -10,7 +10,7 @@ class Footer extends Component {
             <footer>
                 <ul className="site-link">
                     <li>
-                        Copyright: {this.state.year} Bruce Tsvilikhovskiy
+                     {this.state.year} Bruce Tsvilikhovskiy
                     </li>
                 </ul>
                 </footer>

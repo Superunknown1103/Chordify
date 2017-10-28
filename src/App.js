@@ -34,7 +34,7 @@ class App extends Component {
             <ul>
             {songIds.map((id) => {
           return ( <li key={id}>
-                <Link to={'/songs/${id}'}>Song {id}</Link>
+                <Link to={`/songs/${id}`}>Song {id}</Link>
                 </li>
                  )
             })}
