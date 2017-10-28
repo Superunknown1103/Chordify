@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
@@ -28,6 +28,19 @@ class App extends Component {
        <BrowserRouter>
        <div className="main-content">
        <div className="workspace">
+         <Route exact path="/songs" render ={(props) => {
+          const songIds = Object.keys(this.state.songs);
+          return (
+            <ul>
+            {songIds.map((id) => {
+          return ( <li key={id}>
+                <Link to={'/songs/${id}'}>Song {id}</Link>
+                </li>
+                 )
+            })}
+            </ul>
+          )
+         }} />
          <Route path="/songs/:songId" render={(props) => {
            const song = this.state.songs[props.match.params.songId];
            return (
