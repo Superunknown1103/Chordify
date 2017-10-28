@@ -48,8 +48,9 @@ class App extends Component {
   render() {
     return (
      <div className="wrapper">
-       <Header />
        <BrowserRouter>
+       <div>
+       <Header />
        <div className="main-content">
        <div className="workspace">
          <Route exact path="/songs" render ={(props) => {
@@ -73,6 +74,7 @@ class App extends Component {
              : <h1>Song not found</h1>
            )
          }} />
+         </div>
          </div>
          </div>
        </BrowserRouter>
