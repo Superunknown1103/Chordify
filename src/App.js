@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
-
+import { base } from './base.js'
 class App extends Component {
   constructor() {
     super();
