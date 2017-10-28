@@ -7,13 +7,22 @@ import { base } from './base.js'
 class App extends Component {
   constructor() {
     super();
+    this.addSong = this.addSong.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.state = {
-       songs: {
-       "1": {id: 1, chordpro: "Lyrics for song 1." },
-       "2": {id: 2, chordpro: "Lyrics for song 2."}
-       }
+       songs: {}
     };
+  }
+
+  addSong(title){
+    const songs = {...this.state.songs};
+    const id = Date.now();
+    songs[id] = {
+      id: id,
+      title: title,
+      chordpro: ""
+    };
+    this.setState({songs});
   }
 
   updateSong(song){
@@ -21,6 +30,21 @@ class App extends Component {
     songs[song.id] = song
     this.setState({songs});
   }
+
+  // Firebase limits me on how many active connections I can have running
+  // at once. I want a mount to run when the user enters, and unmount when the user 
+  // has left.
+  componentWillMount(){
+    this.songsRef = base.syncState('songs', {
+      context: this,
+      state: 'songs'
+    });
+  }
+
+  componentWillUnmount(){
+    base.removeBinding(this.songsRef);
+  }
+
   render() {
     return (
      <div className="wrapper">

@@ -2,12 +2,12 @@ import Rebase from 're-base';
 import firebase from 'firebase';
 // Initalize Firebase
 const config = {
-        apiKey: "AIzaSyDXU7hnX0YBBjzn4e55od8NR1We_8K4QDA",
-        authDomain: "chordify-1103.firebaseapp.com",
-        databaseURL: "https://chordify-1103.firebaseio.com",
-        projectId: "chordify-1103",
-        storageBucket: "",
-        messagingSenderId: "570514070895"
+        apiKey: process.env.REACT_APP_FIREBASE_KEY,
+        authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+        databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID
       };
 
 const app = firebase.initializeApp(config)
