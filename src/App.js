@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import Login from './components/Login.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
 import { base } from './base.js'
 import SongList from './components/SongList.jsx';
@@ -12,7 +13,8 @@ class App extends Component {
     this.addSong = this.addSong.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.state = {
-       songs: {}
+       songs: {},
+       authenticated: false,
     };
   }
 
@@ -53,9 +55,10 @@ class App extends Component {
      <div style={{maxWidth: "1160px", margin: "0 auto"}}>
        <BrowserRouter>
        <div>
-       <Header />
+       <Header authenticated={this.state.authenticated} />
        <div className="main-content" style={{padding: "1em" }}>
        <div className="workspace">
+         <Route exact path="/login" component={Login} />
          <Route exact path="/songs" render ={(props) => {
          return (
            <SongList songs={this.state.songs} />
