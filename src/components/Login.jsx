@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
 
+// you can make CSS variables!! How cool is that? :)
+const loginStyles = {
+    width: "90%",
+    maxWidth: "315px",
+    margin: "20px auto",
+    border: "1px solid #ddd",
+    borderRadius: "5px",
+    padding: "10px"
+}
+
 class Login extends Component {
     constructor(props) {
     super(props)
@@ -8,20 +18,21 @@ class Login extends Component {
     }
     
     authWithFacebook() {
-        console.log("authed with facebook")
+        console.log("authed with facebook");
     }
 
     authWithEmailPassword(event) {
         event.preventDefault()
+        console.log("authed with email");
         console.table([{
             email: this.emailInput.value,
-            password: this.passwordInputInput.value
+            password: this.passwordInput.value
         }])
     }
     
     render() {
     return (
-        <div>
+        <div style={loginStyles}>
         <button style={{width:"100%"}} className="pt-button pt-intent-primary"
         onClick={() => {this.authWithFacebook() }}>Login with Facebook</button>
         <hr style={{marginTop: "10px", marginBottom: "10px"}} />
@@ -37,7 +48,7 @@ class Login extends Component {
                 type="email" ref={(input) => {this.emailInput = input}} placeholder="Email"></input>
                 </label>
                 <label className="pt-label">
-            password
+            Password
                 <input style={{width: "100%"}} className="pt-input" name="password"
                 type="password" ref={(input) => {this.passwordInput = input}} placeholder="Password"></input>
                 </label>
