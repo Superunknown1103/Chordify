@@ -7,11 +7,11 @@ class Login extends Component {
     this.authWithEmailPassword = this.authWithEmailPassword.bind(this)
     }
     
-    authwithFacebook() {
+    authWithFacebook() {
         console.log("authed with facebook")
     }
 
-    authwithEmailPassword(event) {
+    authWithEmailPassword(event) {
         event.preventDefault()
         console.table([{
             email: this.emailInput.value,
