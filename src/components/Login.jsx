@@ -36,11 +36,25 @@ class Login extends Component {
 
     authWithEmailPassword(event) {
         event.preventDefault()
-        console.log("authed with email");
-        console.table([{
-            email: this.emailInput.value,
-            password: this.passwordInput.value
-        }])
+        
+        const email = this.emailInput.value
+        const password = this.passwordInput.value
+
+        app.auth().fetchProvidersForEmail(email)
+        .then((provider) => {
+            if(provider.length === 0) {
+                // create user
+            } else if (provider.indexOf("password") === -1){
+                // they used facebook
+                this.loginForm.reset()
+                this.toaster.show({ intent: Intent.WARNING, message: "Try alternative login." })
+            } else {
+                // sign user in
+            }
+            })
+            .catch((error) => {
+                this.toaster.show({ intent: Intent.DANGER, message: error.message })
+            })
     }
     
     render() {
