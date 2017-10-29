@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Toaster, Intent } from '@blueprintjs/core'
-import {app, facebookProvider } from '../base'
+import { app, facebookProvider } from '../base.js'
 
 // you can make CSS variables!! How cool is that? :)
 const loginStyles = {
@@ -20,7 +20,7 @@ class Login extends Component {
     this.authWithEmailPassword = this.authWithEmailPassword.bind(this)
     this.state = {
         redirect: false
-    }
+     }
     }
     
     authWithFacebook() {

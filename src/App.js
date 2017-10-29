@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Login from './components/Login.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
-import { base } from './base.js'
+import { base, app } from './base.js'
 import SongList from './components/SongList.jsx';
 
 class App extends Component {
@@ -39,6 +39,19 @@ class App extends Component {
   // at once. I want a mount to run when the user enters, and unmount when the user 
   // has left.
   componentWillMount(){
+    this.removeAuthListener = app.auth().onAuthStateChanged((user) => { 
+      if(user) {
+    this.setState({
+      authenticated: true
+    }) 
+              } 
+      else {
+    this.setState({
+      authenticated: false
+    })
+    }
+  })
+
     this.songsRef = base.syncState('songs', {
       context: this,
       state: 'songs'
