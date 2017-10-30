@@ -65,8 +65,10 @@ class Login extends Component {
             })
         }
     render() {
+        const { from } = this.props.location.state || { from: { pathname: '/' }}
+
         if (this.state.redirect === true) {
-            return <Redirect to='/' />
+            return <Redirect to={from} />
         }
     return (
         <div style={loginStyles}>
