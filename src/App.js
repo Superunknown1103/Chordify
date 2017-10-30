@@ -23,6 +23,7 @@ function AuthenticatedRoute({component: Component, authenticated,  ...rest}) {
 class App extends Component {
   constructor() {
     super();
+    this.setCurrentUser = this.setCurrentUser.bind(this);
     this.addSong = this.addSong.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.state = {
@@ -113,8 +114,11 @@ class App extends Component {
        <Header authenticated={this.state.authenticated} />
        <div className="main-content" style={{padding: "1em" }}>
        <div className="workspace">
-         <Route exact path="/login" component={Login} />
+         <Route exact path="/login" render={(props) => {
+          return <Login setCurrentUser={this.setCurrentUser} {...props}
+          /> }} />
          <Route exact path="/logout" component={Logout} />
+         
          <AuthenticatedRoute 
          exact path="/songs" 
          component={SongList} 

@@ -25,11 +25,12 @@ class Login extends Component {
     
     authWithFacebook() {
         app.auth().signInWithPopup(facebookProvider)
-            .then((result, error) => {
+            .then((user, error) => {
                 if (error) {
                     this.toaster.show({ intent: Intent.DANGER, message: "Unable to sign in with Facebook" })
                     } else {
                     this.setState({ redirect: true })
+                    this.props.setCurrentUser(user)
                     };
             })
     }
@@ -57,6 +58,7 @@ class Login extends Component {
             .then((user) => {
         if (user && user.email) {
             this.loginForm.reset()
+            this.props.setCurrentUser(user)
             this.setState({redirect: true})
         }
     })
