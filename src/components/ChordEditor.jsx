@@ -27,6 +27,10 @@ class ChordEditor extends Component {
     render() {
         return (
             <div>
+                To add chords, simple enclose the chord in brackets [Bminor]. The output will autogenerate
+                a chord chart. Happy songwriting!
+                <br />
+                <br />
                 <ul className="pt-breadcrumbs">
                     <li><Breadcrumb href="/songs" text="Songs" /></li>
                     <li><Breadcrumb href="/songs" text={this.props.song.title} /></li>

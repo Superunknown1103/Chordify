@@ -20,7 +20,9 @@ class SongList extends Component {
         const songIds = Object.keys(songs)
         return (
             <div>
-            <h1 style={{marginBottom: "0.5em"}}>Songs</h1>
+            <h1 style={{marginBottom: "0.5em"}}>Songlist</h1>
+            <div>Click the '+' icon in the toolbar to write a new song.</div>
+            <br />
 
             <div style={songListStyles}>
                 {songIds.map((id) => {
