@@ -41,6 +41,7 @@ class App extends Component {
       id: id,
       title: title,
       chordpro: "",
+      owner: this.state.currentUser.uid
     };
     this.setState({songs});
   }
@@ -75,22 +76,26 @@ class App extends Component {
       if(user) {
     this.setState({
       authenticated: true,
-      loading: false
+      loading: false,
+      currentUser: user,
     }) 
-              } 
-      else {
-    this.setState({
-      authenticated: false,
-      loading: false
-    })
-    }
-  })
-
-    this.songsRef = base.syncState('songs', {
+    // sync the state from inside of Firebase that is sitting at the
+    // user's ID to songs on the App.
+    this.songsRef = base.syncState(`songs/${user.uid}`, {
       context: this,
       state: 'songs'
     });
-  }
+  } else {
+    this.setState({
+      authenticated: false,
+      loading: false,
+      currentUser: false,
+    })
+    
+    base.removeBinding(this.songsRef);
+    }
+  })
+}
 
   componentWillUnmount(){
     this.removeAuthListener();
