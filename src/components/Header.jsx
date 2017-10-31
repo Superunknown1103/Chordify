@@ -20,7 +20,7 @@ class Header extends Component {
     return (
       <nav className="pt-navbar">
         <div className="pt-navbar-group pt-align-left">
-          <div className="pt-navbar-heading">Chord Creator</div>
+          <div className="pt-navbar-heading">Chordify</div>
           {this.props.authenticated
               ? <input className="pt-input" placeholder="Search Songs..." type="text" />
               : null
