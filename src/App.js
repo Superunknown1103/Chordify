@@ -91,7 +91,7 @@ class App extends Component {
       loading: false,
       currentUser: false,
     })
-    
+
     base.removeBinding(this.songsRef);
     }
   })
