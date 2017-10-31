@@ -6,7 +6,7 @@ import Footer from './components/Footer.jsx';
 import Login from './components/Login.jsx';
 import Logout from './components/Logout.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
-import { base, app } from './base.js'
+import { base, app } from './base.js';
 import SongList from './components/SongList.jsx';
 
 function AuthenticatedRoute({component: Component, authenticated,  ...rest}) {
@@ -40,7 +40,7 @@ class App extends Component {
     songs[id] = {
       id: id,
       title: title,
-      chordpro: ""
+      chordpro: "",
     };
     this.setState({songs});
   }
@@ -111,7 +111,7 @@ class App extends Component {
      <div style={{maxWidth: "1160px", margin: "0 auto"}}>
        <BrowserRouter>
        <div>
-       <Header authenticated={this.state.authenticated} />
+       <Header addSong = {this.addSong} authenticated={this.state.authenticated} />
        <div className="main-content" style={{padding: "1em" }}>
        <div className="workspace">
          <Route exact path="/login" render={(props) => {

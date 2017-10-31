@@ -8,9 +8,6 @@ class ChordEditor extends Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
-        this.state = {
-            song: { chordpro: "Type lyrics here "}
-        }
     }
 
     handleChange(event) {
