@@ -10,7 +10,9 @@ const loginStyles = {
     margin: "20px auto",
     border: "1px solid #ddd",
     borderRadius: "5px",
-    padding: "10px"
+    padding: "10px",
+    "background-color": "black",
+    color: "white"
 }
 
 class Login extends Component {
@@ -74,14 +76,14 @@ class Login extends Component {
         }
     return (
         <div style={loginStyles}>
-        <Toaster ref={(element) => { this.toaster = element }} />x
+        <Toaster ref={(element) => { this.toaster = element }} />
         <button style={{width:"100%"}} className="pt-button pt-intent-primary"
         onClick={() => {this.authWithFacebook() }}>Login with Facebook</button>
         <hr style={{marginTop: "10px", marginBottom: "10px"}} />
         <form onSubmit={(event) => { this.authWithEmailPassword(event) }} ref={(form) =>
             {this.loginForm = form }}>
         <div style={{marginBottom: "10px"}} className="pt-callout pt-icon-info-sign">
-        <h5>Note</h5>
+        <h5 style={{color: 'white'}}>Note</h5>
         If you don't have an account, this form will create your account.
                 </div>
         <label className="pt-label">

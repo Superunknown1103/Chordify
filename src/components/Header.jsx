@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { Popover, PopoverInteractionKind, Position } from '@blueprintjs/core'
 import NewSongForm from './NewSongForm.jsx'
 
+var styles= {
+  'background-color' : 'black',
+  'color': 'white'
+}
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +23,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="pt-navbar">
+      <nav className="pt-navbar" style={styles}>
         <div className="pt-navbar-group pt-align-left">
           <div className="pt-navbar-heading">Chordify</div>
           {this.props.authenticated

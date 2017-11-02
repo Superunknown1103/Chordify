@@ -8,6 +8,11 @@ import Logout from './components/Logout.jsx';
 import ChordEditor from './components/ChordEditor.jsx';
 import { base, app } from './base.js';
 import SongList from './components/SongList.jsx';
+import styles from './components/styles.css.js';
+import bass from './images/bass.jpg';
+import piano from './images/piano.jpg';
+import sax from './images/sax.jpg';
+
 
 function AuthenticatedRoute({component: Component, authenticated,  ...rest}) {
   return (
@@ -102,10 +107,10 @@ class App extends Component {
     base.removeBinding(this.songsRef);
   }
 
-  render() {
+  render() { 
     if (this.state.loading === true){
     return (
-      <div style={{ textAlign: "center", position: "absolute", top: "25%", left: 
+      <div style={{ height: "100%", textAlign: "center", position: "absolute", top: "25%", left: 
       "50%" }}>
       <h3>Loading</h3>
       <Spinner />
@@ -113,6 +118,7 @@ class App extends Component {
     );
   }
   return (
+    <div style={styles.page}>
      <div style={{maxWidth: "1160px", margin: "0 auto"}}>
        <BrowserRouter>
        <div>
@@ -141,7 +147,18 @@ class App extends Component {
          </div>
          </div>
        </BrowserRouter>
+       <div className="img-container" style= {{"margin": "100px"}}>
+         <h1 style={{color: '#696969', 'text-align': 'center', 'margin-bottom': '1em'}}>Every songwriter needs a chord sheet.</h1>
+       <img src={bass} style={{"border-style" : "solid", "border-width": "5px", "border-color": "black", height: "30vh", width: 
+       "33%"}} alt="bass"></img>
+       <img src={piano} style={{"border-style" : "solid", "border-width": "5px", "border-color": "black", height: "30vh", width: 
+       "33%"}} alt="piano"></img>
+       <img src={sax} style={{"border-style" : "solid", "border-width": "5px", "border-color": "black", height: "30vh", width: 
+       "33%"}} alt="sax"></img>
+       </div>
+       <br />
        <Footer />
+       </div>
        </div>
   );
   }

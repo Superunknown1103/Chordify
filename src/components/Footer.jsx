@@ -8,7 +8,7 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <ul className="site-link">
+                <ul className="site-link" style={{margin: "0 auto", "text-align" : "center"}}>
                     <li>
                      {this.state.year} Bruce Tsvilikhovskiy
                     </li>

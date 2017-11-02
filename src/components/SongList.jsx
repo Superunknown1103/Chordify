@@ -13,6 +13,7 @@ const songCardStyles = {
     minWidth: "150px",
     flex: "1",
     margin: "5px",
+    'background-color': 'white',
 }
 class SongList extends Component {
     render() {
@@ -20,8 +21,9 @@ class SongList extends Component {
         const songIds = Object.keys(songs)
         return (
             <div>
-            <h1 style={{marginBottom: "0.5em"}}>Songlist</h1>
-            <div>Click the '+' icon in the toolbar to write a new song.</div>
+                <br />
+            <h1 style={{marginBottom: "0.5em", "text-align" : "center"}}>Songlist</h1>
+            <div style={{"text-align": "center"}}>Click the '+' icon in the toolbar to write a new song.</div>
             <br />
 
             <div style={songListStyles}>
