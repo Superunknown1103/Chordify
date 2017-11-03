@@ -129,11 +129,11 @@ class App extends Component {
          <Route exact path="/logout" component={Logout} />
 
          <AuthenticatedRoute
-         exact path="/main"
+         exact path="/"
          component={Main}
          authenticated = {this.state.authenticated}
          />
-         
+
          <AuthenticatedRoute 
          exact path="/songs" 
          component={SongList} 

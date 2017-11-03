@@ -28,7 +28,7 @@ class ChordEditor extends Component {
         return (
             <div>
                 To add chords, simple enclose the chord in brackets [Bminor]. The output will autogenerate
-                a chord chart. Happy songwriting!
+                a chord chart. The application will auto-save your progress. Happy songwriting!
                 <br />
                 <br />
                 <ul className="pt-breadcrumbs">
