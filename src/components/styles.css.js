@@ -1,6 +1,6 @@
 export default {
     page: {
-        'background-color': '#FFE8D5',
+        'background-color': '#F2D1BA',
         'height': '100%'
     },
 

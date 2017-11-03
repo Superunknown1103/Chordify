@@ -35,7 +35,7 @@ class Header extends Component {
           this.props.authenticated
           ? (
             <div className="pt-navbar-group pt-align-right">
-              <Link className="pt-button pt-minimal pt-icon-music" to="/songs">Songs</Link>
+              <Link className="pt-button pt-minimal pt-icon-music" to="/songs" style={{color: 'white'}}>Songs</Link>
               <Popover
                 content={(<NewSongForm addSong={this.props.addSong} postSubmitHandler={this.closePopover} />)}
                 interactionKind={PopoverInteractionKind.CLICK}
